@@ -1,0 +1,45 @@
+@startuml
+title
+<size:16><b>UC-05: Search and Filter Products - Activity Diagram</b></size>
+end title
+
+|Buyer|
+start
+
+:Type keyword in search bar and press Enter / click search icon;
+
+|System|
+if (Search bar empty?) then (yes)
+  :Display all approved listings (status 'Approved', stock > 0) sorted by newest;
+  note right: Alternative Flow 1
+else (no)
+  :Query product catalogue for approved listings matching keyword
+   (title, description, brand, model - case insensitive);
+endif
+
+if (No matching results found?) then (yes)
+  :Display 'No results for [keyword]' and suggest popular categories;
+  note right: Alternative Flow 2
+  stop
+else (no)
+endif
+
+:Display results in product grid (thumbnail, title, price, condition, seller rating);
+
+|Buyer|
+:Apply filters (Category, Brand, Price Range, Condition, Seller Rating, Availability);
+
+|System|
+:Update results in real-time based on selected filters;
+
+|Buyer|
+:Sort results (Relevance, Price Low/High, Newest, Seller Rating);
+
+|System|
+:Display updated sorted results;
+
+|Buyer|
+:Select a product to view its detail page;
+
+stop
+@enduml

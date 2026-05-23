@@ -1,0 +1,56 @@
+@startuml
+title
+<size:16><b>UC-08: Checkout and Place Order - Activity Diagram</b></size>
+end title
+
+|Buyer|
+start
+
+:Navigate to Cart page and click 'Proceed to Checkout';
+
+|System|
+:Display order summary (items, quantities, unit prices, subtotal, delivery fee, total);
+
+|Buyer|
+:Select or enter delivery address;
+
+:Select delivery method (Standard/Express);
+
+:Review order summary and click 'Place Order';
+
+|System|
+:Validate stock availability for all cart items (server-side total);
+
+if (All items in stock?) then (no)
+  :Notify Buyer and highlight unavailable item(s);
+  :Buyer removes item or updates quantity;
+  :Cart preserved;
+  stop
+else (yes)
+endif
+
+:Create Order record with status 'Pending Payment' and reserve stock
+ (multi-seller order line groups - BR-12);
+
+:Redirect Buyer to Payment Gateway (UC-09);
+
+|Buyer|
+:Complete payment (handled in UC-09);
+
+|System|
+if (Payment successful?) then (no)
+  :Order remains 'Pending Payment' for 30 minutes;
+  :Automatically cancel order and release reserved stock (BR-14);
+  :Show payment failure message;
+  stop
+else (yes)
+endif
+
+:Update Order status to 'Confirmed';
+
+:Send Order Confirmation email to Buyer and Order Notification email to Seller;
+
+:Clear shopping cart;
+
+stop
+@enduml

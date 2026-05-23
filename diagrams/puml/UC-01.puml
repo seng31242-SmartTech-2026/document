@@ -1,0 +1,53 @@
+@startuml
+title
+<size:16><b>UC-01: Register Account - Activity Diagram</b></size>
+end title
+
+|User (Buyer/Seller)|
+start
+
+:Navigate to SmartTech homepage and click 'Register';
+
+:System displays registration form;
+
+:Complete all required fields and select account type;
+
+:Click 'Create Account';
+
+|System|
+:Validate input (format, email uniqueness, password strength);
+
+if (Email already registered?) then (yes)
+  :Display error: "Email already in use";
+  stop
+else (no)
+endif
+
+if (Password meets strength requirements?) then (no)
+  :Display inline validation error;
+  stop
+else (yes)
+endif
+
+:Create user account with status 'Unverified';
+
+:Send verification email (unique token, valid 24h);
+
+:Display confirmation page instructing user to check email;
+
+|User|
+:Click verification link in email;
+
+|System|
+if (Token valid and not expired?) then (no)
+  :Display expiry notice with 'Resend Verification Email' button;
+  stop
+else (yes)
+endif
+
+:Validate token and set account status to 'Active';
+
+:Redirect user to their dashboard;
+
+stop
+@enduml

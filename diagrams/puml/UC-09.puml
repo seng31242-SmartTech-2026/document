@@ -1,0 +1,43 @@
+@startuml
+title
+<size:16><b>UC-09: Process Payment - Activity Diagram</b></size>
+end title
+
+|Buyer|
+start
+
+:Presented with Payment Gateway page showing order total in LKR;
+
+:Select payment method (Credit/Debit Card, Bank Transfer, Mobile Wallet);
+
+:Enter payment credentials;
+
+|Payment Gateway|
+:Process the transaction;
+
+if (Transaction approved?) then (no)
+  :Send failure webhook to SmartTech;
+  |System|
+  :Receive webhook, verify signature;
+  :Update Order status to 'Payment Failed';
+  |Buyer|
+  :Redirected to Payment Failed page with option to retry;
+  note right: Alternative Flow 1
+  stop
+else (yes)
+endif
+
+:Send success webhook to SmartTech;
+
+|System|
+:Receive webhook, verify signature (BR-16);
+
+:Update Order status to 'Confirmed';
+
+:Update Buyer payment record (immutable - BR-17);
+
+|Buyer|
+:Redirected to Order Confirmation page;
+
+stop
+@enduml

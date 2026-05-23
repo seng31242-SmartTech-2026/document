@@ -1,0 +1,47 @@
+@startuml
+title
+<size:16><b>UC-04: List a Product - Activity Diagram</b></size>
+end title
+
+|Seller|
+start
+
+:Navigate to Seller Dashboard and click 'Add New Listing';
+
+|System|
+:Display product listing form;
+
+|Seller|
+:Enter product details (title, category, sub-category, brand, model, condition, price, stock, description, specifications);
+
+:Upload product images (1 to 8, JPEG/PNG, max 5MB each);
+
+|System|
+:Validate all required fields and image constraints;
+
+if (All images valid?) then (no)
+  :Display inline error for invalid image(s);
+  :Seller re-uploads corrected images;
+  note right: Alternative Flow 2 (loop back)
+  --> :Upload product images;
+else (yes)
+endif
+
+if (Seller wants to save as Draft?) then (yes)
+  :Save listing as Draft (not submitted, visible only to Seller);
+  stop
+else (no)
+endif
+
+|Seller|
+:Click 'Submit for Review';
+
+|System|
+:Save listing with status 'Pending Review' and upload images to cloud storage;
+
+:Notify Admin via email and in-app notification;
+
+:Display success confirmation to Seller;
+
+stop
+@enduml

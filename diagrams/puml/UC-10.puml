@@ -1,0 +1,37 @@
+@startuml
+title
+<size:16><b>UC-10: Track Order - Activity Diagram</b></size>
+end title
+
+|Buyer|
+start
+
+:Navigate to 'My Orders' from dashboard;
+
+|System|
+:Display list of all orders placed by Buyer with status indicators;
+
+|Buyer|
+:Select an order to view details;
+
+|System|
+:Display Order ID, Date Placed, Items, Seller, Total, Current Status,
+ and Status History timeline (Confirmed → Packed → Shipped → Delivered);
+
+|Seller|
+:Update order status from dashboard (Packed or Shipped);
+
+|System|
+:Send email notification to Buyer at each status change;
+
+if (Order status not updated within 3 business days of confirmation?) then (yes)
+  :Send automated reminder to Seller;
+  note right: Alternative Flow 1
+else (no)
+endif
+
+|Buyer|
+:Mark order as 'Received' upon delivery;
+
+stop
+@enduml

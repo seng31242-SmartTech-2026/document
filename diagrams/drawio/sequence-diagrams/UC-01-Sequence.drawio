@@ -1,0 +1,472 @@
+<mxfile host="app.diagrams.net" pages="3">
+  <diagram name="Page-1" id="l41M6AuqyE09V1ceDiNS">
+    <mxGraphModel dx="1688" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;" value="SmartTech – Context Diagram (Level-0 DFD)" vertex="1">
+          <mxGeometry height="35" width="600" x="300" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sys" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=3;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;" value="SmartTech System" vertex="1">
+          <mxGeometry height="120" width="340" x="430" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="buyer" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1;align=center;" value="Buyer" vertex="1">
+          <mxGeometry height="60" width="160" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="seller" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1;align=center;" value="Seller" vertex="1">
+          <mxGeometry height="60" width="160" x="60" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=14;fontStyle=1;align=center;" value="Administrator" vertex="1">
+          <mxGeometry height="60" width="160" x="980" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="paygate" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;align=center;" value="Payment Gateway&#xa;(PayHere / LankaPay)" vertex="1">
+          <mxGeometry height="60" width="180" x="980" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="emailsvc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;align=center;" value="Email Service&#xa;(SendGrid / AWS SES)" vertex="1">
+          <mxGeometry height="60" width="200" x="430" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cloudstorage" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;align=center;" value="Cloud Storage&#xa;(AWS S3)" vertex="1">
+          <mxGeometry height="60" width="200" x="430" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="f_b1" edge="1" parent="1" source="buyer" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Registration &amp; login details">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="200" />
+              <mxPoint x="430" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_b2" edge="1" parent="1" source="buyer" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Search query &amp; filters">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="240" />
+              <mxPoint x="430" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_b3" edge="1" parent="1" source="buyer" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Order &amp; delivery details">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="280" />
+              <mxPoint x="430" y="395" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_b4" edge="1" parent="1" source="buyer" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Product review &amp; rating">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="320" />
+              <mxPoint x="430" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_b5" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="buyer" value="Product listings &amp; search results">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="430" />
+              <mxPoint x="140" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_b6" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="buyer" value="Order confirmation &amp; tracking status">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="450" />
+              <mxPoint x="140" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_s1" edge="1" parent="1" source="seller" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Product listing data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="620" />
+              <mxPoint x="430" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_s2" edge="1" parent="1" source="seller" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Stock &amp; order status updates">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="650" />
+              <mxPoint x="430" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_s3" edge="1" parent="1" source="seller" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="KYC documents">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="680" />
+              <mxPoint x="430" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_s4" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="seller" value="New order notifications">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="460" />
+              <mxPoint x="140" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_s5" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="seller" value="Sales analytics &amp; dashboard data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="478" />
+              <mxPoint x="140" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_s6" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="seller" value="Listing approval / rejection status">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="496" />
+              <mxPoint x="140" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_a1" edge="1" parent="1" source="admin" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Moderation decisions (approve/reject)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="200" />
+              <mxPoint x="770" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_a2" edge="1" parent="1" source="admin" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="User management actions">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="240" />
+              <mxPoint x="770" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_a3" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="admin" value="Pending listings &amp; platform analytics">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="380" />
+              <mxPoint x="1040" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_a4" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="admin" value="User reports &amp; flags">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="395" />
+              <mxPoint x="1060" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_p1" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="paygate" value="Payment request (orderId, amount)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="400" />
+              <mxPoint x="980" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_p2" edge="1" parent="1" source="paygate" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Payment result webhook (success/failure)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="415" />
+              <mxPoint x="770" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_e1" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="emailsvc" value="Email trigger (recipient, type, content)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="360" />
+              <mxPoint x="510" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_e2" edge="1" parent="1" source="emailsvc" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Delivery status / bounce report">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="120" />
+              <mxPoint x="560" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_c1" edge="1" parent="1" source="sys" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="cloudstorage" value="Product image upload (binary)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="480" />
+              <mxPoint x="510" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_c2" edge="1" parent="1" source="cloudstorage" style="endArrow=block;endFill=1;strokeColor=#000000;strokeWidth=1.2;fontSize=11;fontStyle=1;align=center;" target="sys" value="Stored image URL">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="700" />
+              <mxPoint x="560" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="_l0CBmc4VP4YEatilZUG" name="Page-2">
+    <mxGraphModel dx="1447" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=15;fontStyle=1;" value="SSD – UC-01: Register Account" vertex="1">
+          <mxGeometry height="30" width="680" x="20" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_buyer_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Buyer" vertex="1">
+          <mxGeometry height="40" width="120" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_sys_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="SmartTech System" vertex="1">
+          <mxGeometry height="40" width="160" x="290" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_email_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Email Service" vertex="1">
+          <mxGeometry height="40" width="130" x="560" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_buyer_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="100" as="sourcePoint" />
+            <mxPoint x="100" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_sys_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="100" as="sourcePoint" />
+            <mxPoint x="370" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_email_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="100" as="sourcePoint" />
+            <mxPoint x="625" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m1" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="1: submitRegistrationForm(name, email, password, type, phone)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="160" as="sourcePoint" />
+            <mxPoint x="370" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m2" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="2: validateInput()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="210" as="sourcePoint" />
+            <mxPoint x="370" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_alt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [email already exists]" vertex="1">
+          <mxGeometry height="60" width="590" x="115" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_m3" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="3: return errorMessage(&#39;Email already in use&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="255" as="sourcePoint" />
+            <mxPoint x="100" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m4" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="4: createAccount(status=&#39;Unverified&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="320" as="sourcePoint" />
+            <mxPoint x="370" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m5" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="5: sendVerificationEmail(email, token)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="370" as="sourcePoint" />
+            <mxPoint x="625" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m6" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="6: deliveryStatus(sent)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="410" as="sourcePoint" />
+            <mxPoint x="370" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m7" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="7: displayVerificationPendingPage()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="450" as="sourcePoint" />
+            <mxPoint x="100" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m8" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="8: clickVerificationLink(token)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="500" as="sourcePoint" />
+            <mxPoint x="370" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_alt2" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [token expired]" vertex="1">
+          <mxGeometry height="60" width="590" x="115" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_m9" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="9: return expiredNotice() + resendOption()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="550" as="sourcePoint" />
+            <mxPoint x="100" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m10" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="10: validateToken(token)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="620" as="sourcePoint" />
+            <mxPoint x="370" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m11" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="11: setAccountStatus(&#39;Active&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="660" as="sourcePoint" />
+            <mxPoint x="370" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_opt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="opt [Seller account]" vertex="1">
+          <mxGeometry height="60" width="590" x="115" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_m12" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="12: triggerKYCOnboarding()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="710" as="sourcePoint" />
+            <mxPoint x="100" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1_m13" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="13: redirectToDashboard()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="780" as="sourcePoint" />
+            <mxPoint x="100" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lXIGQ9EVZ6q5eq3WJi9h" name="Page-3">
+    <mxGraphModel dx="1013" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=15;fontStyle=1;" value="SSD – UC-04: List a Product" vertex="1">
+          <mxGeometry height="30" width="780" x="850" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_seller_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Seller" vertex="1">
+          <mxGeometry height="40" width="120" x="860" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_sys_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="SmartTech System" vertex="1">
+          <mxGeometry height="40" width="160" x="1090" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_cloud_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Cloud Storage" vertex="1">
+          <mxGeometry height="40" width="130" x="1360" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_admin_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Administrator" vertex="1">
+          <mxGeometry height="40" width="130" x="1590" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_seller_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="100" as="sourcePoint" />
+            <mxPoint x="920" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_sys_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="100" as="sourcePoint" />
+            <mxPoint x="1170" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_cloud_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1425" y="100" as="sourcePoint" />
+            <mxPoint x="1425" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_admin_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1655" y="100" as="sourcePoint" />
+            <mxPoint x="1655" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m1" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="1: submitProductListing(title, category, brand, condition, price, stock, desc)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="160" as="sourcePoint" />
+            <mxPoint x="1170" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m2" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="2: uploadImages(imageFiles[ ])">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="210" as="sourcePoint" />
+            <mxPoint x="1170" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_alt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [invalid format / size]" vertex="1">
+          <mxGeometry height="55" width="855" x="935" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m3" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="3: return imageError(&#39;Invalid format or size&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="255" as="sourcePoint" />
+            <mxPoint x="920" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m4" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="4: validateListingFields()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="320" as="sourcePoint" />
+            <mxPoint x="1170" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_opt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="opt [Save as Draft]" vertex="1">
+          <mxGeometry height="55" width="855" x="935" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m5" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="5: saveDraft() → return draftConfirmation()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="365" as="sourcePoint" />
+            <mxPoint x="920" y="365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m6" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="6: storeImages(imageFiles[ ])">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="430" as="sourcePoint" />
+            <mxPoint x="1425" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m7" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="7: return imageURLs[ ]">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1425" y="470" as="sourcePoint" />
+            <mxPoint x="1170" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m8" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="8: saveListing(status=&#39;PendingReview&#39;, imageURLs)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="510" as="sourcePoint" />
+            <mxPoint x="1170" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m9" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="9: notifyAdmin(listingId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="550" as="sourcePoint" />
+            <mxPoint x="1655" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m10" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="10: return submissionConfirmation()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="590" as="sourcePoint" />
+            <mxPoint x="920" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_m11" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="11: moderateListing(listingId, decision, reason?)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1655" y="640" as="sourcePoint" />
+            <mxPoint x="1170" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_alt2" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [Approved]" vertex="1">
+          <mxGeometry height="55" width="855" x="935" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m12" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="12: setStatus(&#39;Active&#39;) → notifySeller(approved)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="685" as="sourcePoint" />
+            <mxPoint x="920" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2_alt3" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [Rejected]" vertex="1">
+          <mxGeometry height="55" width="855" x="935" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m13" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="13: setStatus(&#39;Rejected&#39;) → notifySeller(reason)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="750" as="sourcePoint" />
+            <mxPoint x="920" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

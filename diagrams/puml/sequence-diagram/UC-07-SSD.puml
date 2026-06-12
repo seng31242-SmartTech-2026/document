@@ -1,0 +1,31 @@
+@startuml
+' SSD – UC-07: Add to Cart
+title SSD – UC-07: Add to Cart
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+
+== Add to Cart ==
+
+Buyer -> System: 1: addToCart(listingId, quantity)
+activate System
+
+System -> System: 2: checkStockAvailability(listingId, quantity)
+
+alt quantity exceeds stock
+    System --> Buyer: 3: return stockError('Only X items available')
+else stock available
+    System -> System: 4: getOrCreateCart(buyerId)
+    System -> System: 5: addItemToCart(cartId, listingId, quantity)
+    
+    opt item already in cart
+        System -> System: 6: updateQuantity(cartItemId, quantity)
+    end
+    
+    System --> Buyer: 7: updateCartBadge(cartItemCount)
+    System --> Buyer: 8: return cartUpdatedConfirmation()
+end
+
+deactivate System
+
+@enduml

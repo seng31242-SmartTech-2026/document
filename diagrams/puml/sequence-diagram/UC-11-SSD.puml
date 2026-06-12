@@ -1,0 +1,27 @@
+@startuml
+' SSD – UC-11: Seller Dashboard
+title SSD – UC-11: Seller Dashboard
+
+actor "Seller" as Seller
+participant "SmartTech System" as System
+
+== Load Dashboard ==
+
+Seller -> System: 1: loadDashboard()
+activate System
+
+System -> System: 2: getSalesOverview(sellerId, period='30days')
+System -> System: 3: calculateMetrics(totalSales, orderCount, avgOrderValue)
+System -> System: 4: getActiveListingsCount(sellerId)
+System -> System: 5: getPendingOrdersCount(sellerId)
+System -> System: 6: getRevenueChartData(sellerId, daily/weekly/monthly)
+System --> Seller: 7: returnDashboardData(metrics, chartData, recentOrders[])
+
+== Refresh Dashboard ==
+
+Seller -> System: 8: refreshDashboard()
+System --> Seller: 9: returnUpdatedMetrics()
+
+deactivate System
+
+@enduml

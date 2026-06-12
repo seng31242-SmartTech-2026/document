@@ -1,0 +1,50 @@
+@startuml
+' SSD – UC-04: List a Product
+title SSD – UC-04: List a Product
+
+actor "Seller" as Seller
+participant "SmartTech System" as System
+participant "Cloud Storage" as CloudStorage
+actor "Administrator" as Admin
+
+== Product Listing Submission ==
+
+Seller -> System: 1: submitProductListing(title, category, brand, condition, price, stock, desc)
+activate System
+
+Seller -> System: 2: uploadImages(imageFiles[])
+
+alt invalid format / size
+    System --> Seller: 3: return imageError('Invalid format or size')
+else valid images
+    System -> System: 4: validateListingFields()
+    
+    opt Save as Draft
+        System --> Seller: 5: saveDraft() → return draftConfirmation()
+    end
+    
+    System -> CloudStorage: 6: storeImages(imageFiles[])
+    activate CloudStorage
+    CloudStorage --> System: 7: return imageURLs[]
+    deactivate CloudStorage
+    
+    System -> System: 8: saveListing(status='PendingReview', imageURLs)
+    System -> Admin: 9: notifyAdmin(listingId)
+    System --> Seller: 10: return submissionConfirmation()
+    
+    == Moderation ==
+    
+    Admin -> System: 11: moderateListing(listingId, decision, reason?)
+    
+    alt Approved
+        System -> System: 12: setStatus('Active')
+        System --> Seller: notifySeller(approved)
+    else Rejected
+        System -> System: 13: setStatus('Rejected')
+        System --> Seller: notifySeller(reason)
+    end
+end
+
+deactivate System
+
+@enduml

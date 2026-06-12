@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="l41M6AuqyE09V1ceDiNS">
+    <mxGraphModel dx="1013" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" value="SmartTech Class Diagram (UML 2.x)" vertex="1">
+          <mxGeometry height="40" width="400" x="350" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="class-user" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="User" vertex="1">
+          <mxGeometry height="230" width="300" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="user-attrs" parent="class-user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontFamily=Courier New;" value="- userId: UUID&#xa;- fullName: String&#xa;- email: String (unique)&#xa;- passwordHash: String&#xa;- phoneNumber: String&#xa;- accountType: Enum{BUYER,SELLER,ADMIN}&#xa;- accountStatus: Enum{UNVERIFIED,ACTIVE,SUSPENDED}&#xa;- profilePhotoUrl: String&#xa;- createdAt: DateTime&#xa;- updatedAt: DateTime" vertex="1">
+          <mxGeometry height="120" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="user-methods" parent="class-user" style="text;strokeColor=inherit;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontFamily=Courier New;" value="+ register(name, email, pwd, phone, type): User&#xa;+ verifyEmail(token): Boolean&#xa;+ login(email, pwd): JWT&#xa;+ logout(token): void&#xa;+ resetPassword(token, newPwd): void&#xa;+ changePassword(currentPwd, newPwd): void&#xa;+ updateProfile(data): User" vertex="1">
+          <mxGeometry height="80" width="300" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class-product" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="ProductListing" vertex="1">
+          <mxGeometry height="230" width="320" x="420" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="product-attrs" parent="class-product" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=9;fontFamily=Courier New;" value="- listingId: UUID&#xa;- sellerId: UUID (FK)&#xa;- title: String&#xa;- category: Enum{PHONES,LAPTOPS,ACCESSORIES}&#xa;- subCategory: String&#xa;- brand: String&#xa;- model: String&#xa;- condition: Enum{NEW,USED,REFURBISHED}&#xa;- price: Decimal&#xa;- stockQuantity: Integer&#xa;- description: Text&#xa;- specifications: JSONB&#xa;- status: Enum{DRAFT,PENDING_REVIEW,ACTIVE,REJECTED,REMOVED}&#xa;- createdAt: DateTime&#xa;- updatedAt: DateTime" vertex="1">
+          <mxGeometry height="150" width="320" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="product-methods" parent="class-product" style="text;strokeColor=inherit;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontFamily=Courier New;" value="+ createListing(data): ProductListing&#xa;+ saveAsDraft(): ProductListing&#xa;+ submitForReview(): void&#xa;+ edit(data): ProductListing&#xa;+ delete(): void&#xa;+ updateStock(qty): void&#xa;+ markOutOfStock(): void" vertex="1">
+          <mxGeometry height="50" width="320" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="class-order" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="Order" vertex="1">
+          <mxGeometry height="200" width="300" x="40" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="order-attrs" parent="class-order" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=9;fontFamily=Courier New;" value="- orderId: UUID&#xa;- buyerId: UUID (FK)&#xa;- deliveryAddress: JSONB&#xa;- deliveryMethod: Enum{STANDARD,EXPRESS}&#xa;- subtotal: Decimal&#xa;- deliveryFee: Decimal&#xa;- totalAmount: Decimal&#xa;- status: Enum{PENDING_PAYMENT,CONFIRMED,PACKED,SHIPPED,DELIVERED,CANCELLED,PAYMENT_FAILED}&#xa;- createdAt: DateTime&#xa;- updatedAt: DateTime" vertex="1">
+          <mxGeometry height="120" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="order-methods" parent="class-order" style="text;strokeColor=inherit;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontFamily=Courier New;" value="+ create(cartItems, address, method): Order&#xa;+ cancelIfUnpaid(): void&#xa;+ updateStatus(newStatus): void&#xa;+ confirmDelivery(): void&#xa;+ cancel(reason): void" vertex="1">
+          <mxGeometry height="50" width="300" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class-cart" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" value="Cart" vertex="1">
+          <mxGeometry height="170" width="320" x="420" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="cart-attrs" parent="class-cart" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontFamily=Courier New;" value="- cartId: UUID&#xa;- buyerId: UUID (FK)&#xa;- createdAt: DateTime&#xa;- updatedAt: DateTime" vertex="1">
+          <mxGeometry height="60" width="320" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cart-methods" parent="class-cart" style="text;strokeColor=inherit;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=10;fontFamily=Courier New;" value="+ addItem(listingId, qty): CartItem&#xa;+ removeItem(cartItemId): void&#xa;+ updateItemQty(cartItemId, qty): CartItem&#xa;+ clear(): void&#xa;+ getTotal(): Decimal" vertex="1">
+          <mxGeometry height="80" width="320" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-user-product" edge="1" parent="1" source="class-user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;startArrow=open;startFill=0;strokeWidth=2;strokeColor=#000000;" target="class-product" value="1     sells      *">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-user-order" edge="1" parent="1" source="class-user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;startArrow=open;startFill=0;strokeWidth=2;strokeColor=#000000;" target="class-order" value="1     places     *">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-user-cart" edge="1" parent="1" source="class-user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;startArrow=open;startFill=0;strokeWidth=2;strokeColor=#000000;" target="class-cart" value="1      has      1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

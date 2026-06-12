@@ -1,0 +1,50 @@
+@startuml
+' SSD – UC-08: Checkout & Place Order
+title SSD – UC-08: Checkout & Place Order
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+participant "Payment Gateway" as PaymentGateway
+actor "Seller" as Seller
+
+== Checkout Process ==
+
+Buyer -> System: 1: proceedToCheckout()
+activate System
+
+System --> Buyer: 2: return orderSummary(items, subtotal, deliveryFee, total)
+
+Buyer -> System: 3: selectDeliveryAddress(address)
+Buyer -> System: 4: selectDeliveryMethod(method)
+Buyer -> System: 5: placeOrder()
+
+System -> System: 6: validateStockAvailability(cartItems)
+
+alt item out of stock
+    System --> Buyer: 7: return stockError(unavailableItems)
+else stock available
+    System -> System: 8: createOrder(status='PendingPayment') + reserveStock()
+    System -> PaymentGateway: 9: initiatePayment(orderId, amount)
+    activate PaymentGateway
+    PaymentGateway --> Buyer: 10: return paymentPage(orderId, amount)
+    
+    == Payment Processing ==
+    
+    PaymentGateway -> System: 11: paymentWebhook(orderId, status)
+    
+    alt payment failed
+        System -> System: 12: setStatus('PaymentFailed')
+        System --> Buyer: auto-cancel after 30min → releaseStock()
+    else payment successful
+        System -> System: 13: setOrderStatus('Confirmed')
+        System --> Buyer: 14: sendOrderConfirmation(buyerEmail)
+        System --> Seller: 15: sendOrderNotification(sellerEmail)
+        System -> System: 16: clearCart(buyerId)
+        System --> Buyer: 17: return orderConfirmationPage(orderId)
+    end
+    deactivate PaymentGateway
+end
+
+deactivate System
+
+@enduml

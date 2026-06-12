@@ -1,0 +1,40 @@
+@startuml
+' SSD – UC-09: Process Payment
+title SSD – UC-09: Process Payment
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+participant "Payment Gateway" as PaymentGateway
+
+== Payment Processing ==
+
+System --> Buyer: 1: displayPaymentPage(orderId, total)
+
+Buyer -> PaymentGateway: 2: selectPaymentMethod(method)
+Buyer -> PaymentGateway: 3: enterPaymentCredentials(credentials)
+
+PaymentGateway -> PaymentGateway: 4: processTransaction(credentials, amount)
+
+alt transaction declined
+    PaymentGateway -> System: 5: sendWebhook(orderId, status='failed')
+    deactivate PaymentGateway
+else transaction successful
+    PaymentGateway -> System: 6: sendWebhook(orderId, status='success', signature)
+    
+    System -> System: 7: verifyWebhookSignature(signature)
+    
+    alt invalid signature
+        System -> System: 8: discardWebhook() + logSecurityWarning()
+    else signature valid
+        System -> System: 9: updateOrderStatus('Confirmed')
+        System -> System: 10: createImmutablePaymentRecord()
+        System --> Buyer: 11: return orderConfirmationPage(orderId)
+    end
+end
+
+alt payment failed – retry
+    System -> System: 12: setStatus('PaymentFailed')
+    System --> Buyer: 13: return paymentFailedPage(retryOption)
+end
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+' SSD – UC-06: View Product Details
+title SSD – UC-06: View Product Details
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+
+== View Product Details ==
+
+Buyer -> System: 1: navigateToProduct(productId)
+activate System
+
+System -> System: 2: retrieveProductListing(productId)
+
+alt product not found / inactive
+    System --> Buyer: 3: return HTTP 404 / 'Product not found'
+else product found
+    System -> System: 4: retrieveProductImages(listingId)
+    System -> System: 5: retrieveSellerProfile(sellerId)
+    System -> System: 6: retrieveProductReviews(listingId, paginated)
+    System --> Buyer: 7: returnProductDetailPage(product, images, seller, reviews, averageRating)
+end
+
+deactivate System
+
+@enduml

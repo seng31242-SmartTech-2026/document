@@ -1,0 +1,281 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="qSdD1vM-kPaDEXAYPscw">
+    <mxGraphModel dx="2026" dy="902" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1;" value="Navigation Flow Diagram – SmartTech Platform" vertex="1">
+          <mxGeometry height="30" width="500" x="180" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="public_label" parent="1" style="text;html=1;strokeColor=none;fillColor=#e1d5e7;align=center;fontSize=13;fontStyle=1;" value="&lt;b&gt;PUBLIC ROUTES (Unauthenticated)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="350" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="home" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" value="Homepage&lt;br&gt;/" vertex="1">
+          <mxGeometry height="50" width="140" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="register" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Register&lt;br&gt;/register" vertex="1">
+          <mxGeometry height="50" width="140" x="250" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Login&lt;br&gt;/login" vertex="1">
+          <mxGeometry height="50" width="140" x="460" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="reset" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Reset Password&lt;br&gt;/reset-password" vertex="1">
+          <mxGeometry height="50" width="160" x="670" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="search" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Product Search&lt;br&gt;/products" vertex="1">
+          <mxGeometry height="50" width="150" x="900" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Product Detail&lt;br&gt;/products/:id" vertex="1">
+          <mxGeometry height="50" width="150" x="1120" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_home_register" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_home_login" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_home_search" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_login_register" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#666666;strokeWidth=1;dashed=1;" target="register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_login_reset" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#666666;strokeWidth=1;dashed=1;" target="reset">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_search_detail" edge="1" parent="1" source="search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="detail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="buyer_label" parent="1" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=center;fontSize=13;fontStyle=1;" value="&lt;b&gt;BUYER PROTECTED ROUTES&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="350" x="40" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="buyer_dash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" value="Buyer Dashboard&lt;br&gt;/buyer/dashboard" vertex="1">
+          <mxGeometry height="50" width="170" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cart" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Shopping Cart&lt;br&gt;/buyer/cart" vertex="1">
+          <mxGeometry height="50" width="160" x="250" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="checkout" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Checkout&lt;br&gt;/buyer/checkout" vertex="1">
+          <mxGeometry height="50" width="160" x="460" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="order_confirm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Order Confirmation&lt;br&gt;/buyer/orders/confirm" vertex="1">
+          <mxGeometry height="50" width="180" x="680" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="my_orders" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="My Orders&lt;br&gt;/buyer/orders" vertex="1">
+          <mxGeometry height="50" width="150" x="920" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="order_detail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Order Detail&lt;br&gt;/buyer/orders/:id" vertex="1">
+          <mxGeometry height="50" width="170" x="1130" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="buyer_profile" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Buyer Profile&lt;br&gt;/buyer/profile" vertex="1">
+          <mxGeometry height="50" width="170" x="40" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="write_review" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Write Review&lt;br&gt;/buyer/reviews/new" vertex="1">
+          <mxGeometry height="50" width="180" x="250" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_login_buyer" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;strokeColor=#82b366;" target="buyer_dash">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="175" />
+              <mxPoint x="125" y="175" />
+              <mxPoint x="125" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_login_buyer_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=2;" value="Login (Buyer)" vertex="1">
+          <mxGeometry height="15" width="80" x="260" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_buyer_cart" edge="1" parent="1" source="buyer_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="cart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_buyer_orders" edge="1" parent="1" source="buyer_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="my_orders">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_buyer_profile" edge="1" parent="1" source="buyer_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="buyer_profile">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="125" y="290" />
+              <mxPoint x="125" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_cart_checkout" edge="1" parent="1" source="cart" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="checkout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_checkout_confirm" edge="1" parent="1" source="checkout" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="order_confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_orders_detail" edge="1" parent="1" source="my_orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="order_detail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_detail_review" edge="1" parent="1" source="order_detail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;dashed=1;" target="write_review">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1215" y="300" />
+              <mxPoint x="340" y="300" />
+              <mxPoint x="340" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_detail_review_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=2;" value="Write Review (after delivery)" vertex="1">
+          <mxGeometry height="15" width="140" x="730" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="seller_label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffe6cc;align=center;fontSize=13;fontStyle=1;" value="&lt;b&gt;SELLER PROTECTED ROUTES&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="350" x="40" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seller_dash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" value="Seller Dashboard&lt;br&gt;/seller/dashboard" vertex="1">
+          <mxGeometry height="50" width="180" x="40" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="my_listings" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="My Listings&lt;br&gt;/seller/listings" vertex="1">
+          <mxGeometry height="50" width="160" x="260" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="create_listing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="Create Listing&lt;br&gt;/seller/listings/new" vertex="1">
+          <mxGeometry height="50" width="180" x="470" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="edit_listing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="Edit Listing&lt;br&gt;/seller/listings/:id/edit" vertex="1">
+          <mxGeometry height="50" width="190" x="700" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="seller_orders" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="Seller Orders&lt;br&gt;/seller/orders" vertex="1">
+          <mxGeometry height="50" width="160" x="940" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="seller_profile" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="Seller Profile&lt;br&gt;/seller/profile" vertex="1">
+          <mxGeometry height="50" width="160" x="1150" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_login_seller" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;strokeColor=#d79b00;" target="seller_dash">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="175" />
+              <mxPoint x="130" y="175" />
+              <mxPoint x="130" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_login_seller_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=2;" value="Login (Seller)" vertex="1">
+          <mxGeometry height="15" width="80" x="260" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_seller_listings" edge="1" parent="1" source="seller_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="my_listings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_seller_orders" edge="1" parent="1" source="seller_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="seller_orders">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="500" />
+              <mxPoint x="1020" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_seller_profile" edge="1" parent="1" source="seller_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="seller_profile">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="510" />
+              <mxPoint x="1230" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_listings_create" edge="1" parent="1" source="my_listings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="create_listing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_listings_edit" edge="1" parent="1" source="my_listings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="edit_listing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_label" parent="1" style="text;html=1;strokeColor=none;fillColor=#f8cecc;align=center;fontSize=13;fontStyle=1;" value="&lt;b&gt;ADMIN PROTECTED ROUTES&lt;/b&gt;" vertex="1">
+          <mxGeometry height="25" width="350" x="40" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_dash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" value="Admin Dashboard&lt;br&gt;/admin/dashboard" vertex="1">
+          <mxGeometry height="50" width="180" x="40" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_listings" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="Moderate Listings&lt;br&gt;/admin/listings" vertex="1">
+          <mxGeometry height="50" width="180" x="270" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="Manage Users&lt;br&gt;/admin/users" vertex="1">
+          <mxGeometry height="50" width="170" x="510" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="admin_analytics" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="Platform Analytics&lt;br&gt;/admin/analytics" vertex="1">
+          <mxGeometry height="50" width="170" x="740" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_login_admin" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;strokeColor=#b85450;" target="admin_dash">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="175" />
+              <mxPoint x="130" y="175" />
+              <mxPoint x="130" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_login_admin_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontStyle=2;" value="Login (Admin)" vertex="1">
+          <mxGeometry height="15" width="80" x="260" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_admin_listings" edge="1" parent="1" source="admin_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="admin_listings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_admin_users" edge="1" parent="1" source="admin_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="admin_users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_admin_analytics" edge="1" parent="1" source="admin_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="admin_analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="logout" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" value="Logout&lt;br&gt;(All Roles)" vertex="1">
+          <mxGeometry height="50" width="140" x="1000" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="nav_buyer_logout" edge="1" parent="1" source="buyer_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#666666;strokeWidth=1;dashed=1;" target="logout">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="530" />
+              <mxPoint x="1070" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_seller_logout" edge="1" parent="1" source="seller_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#666666;strokeWidth=1;dashed=1;" target="logout">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="540" />
+              <mxPoint x="1070" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_admin_logout" edge="1" parent="1" source="admin_dash" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#666666;strokeWidth=1;dashed=1;" target="logout">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="550" />
+              <mxPoint x="1070" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nav_logout_home" edge="1" parent="1" source="logout" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=1.5;" target="home">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend_bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="" vertex="1">
+          <mxGeometry height="130" width="500" x="40" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=12;fontStyle=1;" value="&lt;b&gt;Legend&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="500" x="40" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_pub" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Public Routes" vertex="1">
+          <mxGeometry height="25" width="100" x="60" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_buyer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Buyer Routes" vertex="1">
+          <mxGeometry height="25" width="100" x="180" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_seller" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" value="Seller Routes" vertex="1">
+          <mxGeometry height="25" width="100" x="300" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="Admin Routes" vertex="1">
+          <mxGeometry height="25" width="100" x="420" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_solid" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=2;" value="━━━ = Primary Navigation" vertex="1">
+          <mxGeometry height="20" width="160" x="60" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_dash" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=2;" value="- - - = Conditional/Action Navigation" vertex="1">
+          <mxGeometry height="20" width="200" x="60" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_color" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=2;" value="Colored arrow = Role-based access after login" vertex="1">
+          <mxGeometry height="20" width="220" x="280" y="790" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,39 @@
+@startuml
+' SSD – UC-13: Manage Profile
+title SSD – UC-13: Manage Profile
+
+actor "User" as User
+participant "SmartTech System" as System
+
+== View Profile ==
+
+User -> System: 1: viewProfilePage()
+activate System
+
+System -> System: 2: retrieveUserProfile(userId)
+System --> User: 3: returnProfileData(name, email, phone, profilePhotoUrl)
+
+== Update Profile ==
+
+User -> System: 4: updateProfileData(fullName, phoneNumber, profilePhoto)
+
+System -> System: 5: validateProfileData()
+
+alt email already exists for another user
+    System --> User: 6: return error('Email already in use')
+else validation passed
+    System -> System: 7: updateUserProfile()
+    System --> User: 8: returnProfileUpdateConfirmation()
+end
+
+== Change Password (Optional) ==
+
+opt Change Password
+    User -> System: 9: changePassword(currentPassword, newPassword)
+    System -> System: 10: verifyCurrentPassword(userId, currentPassword)
+    System -> System: 11: hashAndUpdatePassword(newPassword)
+end
+
+deactivate System
+
+@enduml

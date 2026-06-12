@@ -1,0 +1,46 @@
+@startuml
+' SSD – UC-15: Admin Manage Users
+title SSD – UC-15: Admin Manage Users
+
+actor "Administrator" as Admin
+participant "SmartTech System" as System
+actor "Target User" as TargetUser
+
+== Load User Management ==
+
+Admin -> System: 1: loadUserManagementPage(filters)
+activate System
+
+System -> System: 2: queryUsers(role, status, searchTerm)
+System --> Admin: 3: returnUserList(users[])
+
+== Suspend Account (Optional) ==
+
+opt Suspend Account
+    Admin -> System: 4: suspendUser(userId, reason)
+    System -> System: 5: setUserStatus('SUSPENDED')
+    System -> System: 6: invalidateAllUserTokens(userId)
+    System --> TargetUser: 7: sendSuspensionEmail(userEmail, reason)
+end
+
+== Reinstate Account (Optional) ==
+
+opt Reinstate Account
+    Admin -> System: 8: reinstateUser(userId)
+    System -> System: 9: setUserStatus('ACTIVE')
+    System --> TargetUser: 10: sendReinstatementEmail(userEmail)
+end
+
+== Approve Seller KYC (Optional) ==
+
+opt Approve Seller KYC
+    Admin -> System: 11: approveSellerKYC(userId)
+    System -> System: 12: updateUserRoleToSeller(userId)
+    System --> TargetUser: 13: sendKYCApprovalEmail(userEmail)
+end
+
+System --> Admin: 14: returnUserUpdateConfirmation()
+
+deactivate System
+
+@enduml

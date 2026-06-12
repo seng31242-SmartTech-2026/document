@@ -1,0 +1,37 @@
+@startuml
+' SSD – UC-12: Write Review
+title SSD – UC-12: Write Review
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+
+== Select Product to Review ==
+
+Buyer -> System: 1: viewDeliveredOrders()
+activate System
+
+System --> Buyer: 2: returnDeliveredOrdersList()
+
+Buyer -> System: 3: selectProductToReview(orderId, productId)
+
+alt already reviewed
+    System --> Buyer: 4: returnMessage('Review already submitted for this product')
+end
+
+== Submit Review ==
+
+Buyer -> System: 5: submitReview(rating, title, body, photos)
+
+System -> System: 6: validateReviewContent(body length 20-500)
+
+alt inappropriate content / profanity
+    System --> Buyer: 7: returnContentError('Review contains prohibited content')
+else content valid
+    System -> System: 8: saveReview(status='PendingModeration')
+    System -> System: 9: recalculateProductAverageRating(listingId)
+    System --> Buyer: 10: returnReviewConfirmation()
+end
+
+deactivate System
+
+@enduml

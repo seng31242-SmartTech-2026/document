@@ -1,0 +1,39 @@
+@startuml
+title UC-01: Register Account - SmartTech System
+
+actor Buyer
+participant "SmartTech System" as System
+participant "Email Service" as EmailService
+
+Buyer -> System : submitRegistrationForm(name, email, password, type, phone)
+activate System
+
+System -> System : validateInput()
+
+alt Email already exists
+    System --> Buyer : errorMessage("Email already in use")
+else New user
+    System -> System : createAccount(status="Unverified")
+
+    System -> EmailService : sendVerificationEmail(email, token)
+    EmailService --> System : deliveryStatus(sent)
+
+    System --> Buyer : displayVerificationPendingPage()
+
+    Buyer -> System : clickVerificationLink(token)
+
+    alt token expired
+        System --> Buyer : expiredNotice() + resendOption()
+    else valid token
+        System -> System : validateToken(token)
+        System -> System : setAccountStatus("Active")
+
+        opt Seller account
+            System --> Buyer : triggerKYCOnboarding()
+        end
+
+        System --> Buyer : redirectToDashboard()
+    end
+end
+
+@enduml

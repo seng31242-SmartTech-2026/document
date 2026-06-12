@@ -1,0 +1,38 @@
+@startuml
+' SSD – UC-05: Search & Filter Products
+title SSD – UC-05: Search & Filter Products
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+
+== Search Products ==
+
+Buyer -> System: 1: searchProducts(keyword)
+activate System
+
+System -> System: 2: queryProductCatalogue(keyword, status='Approved')
+
+alt no results found
+    System --> Buyer: 3: return noResultsPage(keyword, suggestions)
+else results found
+    System --> Buyer: 4: return productGrid(results[])
+    
+    opt Buyer applies filters
+        Buyer -> System: 5: applyFilters(brand, priceRange, condition, rating, availability)
+        System --> Buyer: 6: return filteredResults()
+    end
+    
+    opt Buyer sorts results
+        Buyer -> System: 7: sortResults(criteria)
+        System --> Buyer: 8: return sortedResults()
+    end
+    
+    == View Product Details ==
+    
+    Buyer -> System: 9: selectProduct(productId)
+    System --> Buyer: 10: return productDetailPage(productId)
+end
+
+deactivate System
+
+@enduml

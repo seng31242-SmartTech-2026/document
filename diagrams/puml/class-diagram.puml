@@ -1,0 +1,146 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+  - userId : UUID
+  - fullName : String
+  - email : String
+  - passwordHash : String
+  - phoneNumber : String
+  - accountType : Enum
+  - accountStatus : Enum
+  - profilePhotoUrl : String
+  - createdAt : DateTime
+  - updatedAt : DateTime
+
+  + register(name,email,pwd,phone,type) : User
+  + verifyEmail(token) : Boolean
+  + login(email,pwd) : JWT
+  + logout(token) : void
+  + resetPassword(token,newPwd) : void
+  + changePassword(currentPwd,newPwd) : void
+  + updateProfile(data) : User
+}
+
+class ProductListing {
+  - listingId : UUID
+  - sellerId : UUID
+  - title : String
+  - category : Enum
+  - brand : String
+  - model : String
+  - price : Decimal
+  - stockQuantity : Integer
+  - description : Text
+  - status : Enum
+
+  + createListing(data) : ProductListing
+  + saveAsDraft() : ProductListing
+  + submitForReview() : void
+  + edit(data) : ProductListing
+  + delete() : void
+  + updateStock(qty) : void
+}
+
+class ProductImage {
+  - imageId : UUID
+  - listingId : UUID
+  - imageUrl : String
+  - sortOrder : Integer
+
+  + upload(file) : ProductImage
+  + delete() : void
+}
+
+class Cart {
+  - cartId : UUID
+  - buyerId : UUID
+
+  + addItem(listingId,qty) : CartItem
+  + removeItem(cartItemId) : void
+  + updateItemQty(cartItemId,qty) : CartItem
+  + clear() : void
+  + getTotal() : Decimal
+}
+
+class CartItem {
+  - cartItemId : UUID
+  - cartId : UUID
+  - listingId : UUID
+  - quantity : Integer
+
+  + updateQuantity(qty) : void
+  + remove() : void
+}
+
+class Order {
+  - orderId : UUID
+  - buyerId : UUID
+  - totalAmount : Decimal
+  - status : Enum
+
+  + create(cartItems,address,method) : Order
+  + updateStatus(newStatus) : void
+  + confirmDelivery() : void
+  + cancel(reason) : void
+}
+
+class OrderLineItem {
+  - lineItemId : UUID
+  - orderId : UUID
+  - listingId : UUID
+  - sellerId : UUID
+  - quantity : Integer
+  - unitPrice : Decimal
+
+  + updateFulfilmentStatus(status) : void
+}
+
+class Payment {
+  - paymentId : UUID
+  - orderId : UUID
+  - amount : Decimal
+  - status : Enum
+
+  + initiatePayment(orderId,amount)
+  + handleWebhook(payload,signature)
+}
+
+class Review {
+  - reviewId : UUID
+  - buyerId : UUID
+  - listingId : UUID
+  - starRating : Integer
+
+  + submit(rating,title,body,photos) : Review
+  + delete() : void
+}
+
+class Notification {
+  - notificationId : UUID
+  - userId : UUID
+  - type : Enum
+  - message : String
+
+  + send(userId,type,message) : Notification
+  + markRead() : void
+}
+
+User "1" -- "*" ProductListing : sells
+User "1" -- "1" Cart : has
+User "1" -- "*" Order : places
+User "1" -- "*" Review : writes
+User "1" -- "*" Notification : receives
+
+ProductListing "1" -- "*" ProductImage : has
+ProductListing "1" -- "*" Review : has
+
+Cart "1" -- "*" CartItem : contains
+CartItem "*" -- "1" ProductListing : for
+
+Order "1" -- "*" OrderLineItem : contains
+OrderLineItem "*" -- "1" ProductListing : for
+
+Order "1" -- "1" Payment : payment
+
+@enduml

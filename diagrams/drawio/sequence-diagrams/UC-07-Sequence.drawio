@@ -1,0 +1,81 @@
+<mxGraphModel dx="1558" dy="694" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="s7_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=15;fontStyle=1;" value="SSD – UC-07: Add to Cart" vertex="1">
+      <mxGeometry height="30" width="680" x="20" y="10" as="geometry" />
+    </mxCell>
+    <mxCell id="s7_buyer_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Buyer" vertex="1">
+      <mxGeometry height="40" width="120" x="40" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s7_sys_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="SmartTech System" vertex="1">
+      <mxGeometry height="40" width="160" x="290" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s7_buyer_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="100" y="100" as="sourcePoint" />
+        <mxPoint x="100" y="700" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_sys_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="100" as="sourcePoint" />
+        <mxPoint x="370" y="700" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_m1" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="1: addToCart(listingId, quantity)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="100" y="160" as="sourcePoint" />
+        <mxPoint x="370" y="160" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_m2" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="2: checkStockAvailability(listingId, quantity)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="200" as="sourcePoint" />
+        <mxPoint x="370" y="200" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_alt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [quantity exceeds stock]" vertex="1">
+      <mxGeometry height="55" width="500" x="115" y="215" as="geometry" />
+    </mxCell>
+    <mxCell id="s7_m3" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="3: return stockError(&#39;Only X items available&#39;)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="245" as="sourcePoint" />
+        <mxPoint x="100" y="245" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_m4" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="4: getOrCreateCart(buyerId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="310" as="sourcePoint" />
+        <mxPoint x="370" y="310" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_m5" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="5: addItemToCart(cartId, listingId, quantity)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="350" as="sourcePoint" />
+        <mxPoint x="370" y="350" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_alt2" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="opt [item already in cart]" vertex="1">
+      <mxGeometry height="55" width="500" x="115" y="365" as="geometry" />
+    </mxCell>
+    <mxCell id="s7_m6" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="6: updateQuantity(cartItemId, quantity)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="395" as="sourcePoint" />
+        <mxPoint x="370" y="395" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_m7" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="7: updateCartBadge(cartItemCount)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="460" as="sourcePoint" />
+        <mxPoint x="100" y="460" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s7_m8" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="8: return cartUpdatedConfirmation()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="500" as="sourcePoint" />
+        <mxPoint x="100" y="500" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

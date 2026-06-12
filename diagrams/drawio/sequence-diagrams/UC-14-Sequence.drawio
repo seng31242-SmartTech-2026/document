@@ -1,0 +1,114 @@
+<mxGraphModel dx="1688" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="s14_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=15;fontStyle=1;" value="SSD – UC-14: Admin Approve Listing" vertex="1">
+      <mxGeometry height="30" width="680" x="20" y="10" as="geometry" />
+    </mxCell>
+    <mxCell id="s14_admin_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Administrator" vertex="1">
+      <mxGeometry height="40" width="140" x="40" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s14_sys_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="SmartTech System" vertex="1">
+      <mxGeometry height="40" width="160" x="290" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s14_seller_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Seller" vertex="1">
+      <mxGeometry height="40" width="120" x="560" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s14_admin_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="110" y="100" as="sourcePoint" />
+        <mxPoint x="110" y="750" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_sys_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="100" as="sourcePoint" />
+        <mxPoint x="370" y="750" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_seller_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="620" y="100" as="sourcePoint" />
+        <mxPoint x="620" y="750" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m1" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="1: loadModerationQueue()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="110" y="160" as="sourcePoint" />
+        <mxPoint x="370" y="160" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m2" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="2: getPendingListings(status=&#39;PENDING_REVIEW&#39;)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="200" as="sourcePoint" />
+        <mxPoint x="370" y="200" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m3" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="3: returnPendingListingsWithDetails()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="240" as="sourcePoint" />
+        <mxPoint x="110" y="240" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m4" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="4: reviewListing(listingId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="110" y="300" as="sourcePoint" />
+        <mxPoint x="370" y="300" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m5" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="5: retrieveFullListingDetails(listingId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="340" as="sourcePoint" />
+        <mxPoint x="370" y="340" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_alt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [Approve]" vertex="1">
+      <mxGeometry height="55" width="670" x="125" y="355" as="geometry" />
+    </mxCell>
+    <mxCell id="s14_m6" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="6: approveListing(listingId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="110" y="385" as="sourcePoint" />
+        <mxPoint x="370" y="385" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m7" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="7: setListingStatus(&#39;ACTIVE&#39;)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="395" as="sourcePoint" />
+        <mxPoint x="370" y="395" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m8" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="8: sendApprovalNotification(sellerId, listingId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="395" as="sourcePoint" />
+        <mxPoint x="620" y="395" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_alt2" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [Reject with reason]" vertex="1">
+      <mxGeometry height="55" width="670" x="125" y="465" as="geometry" />
+    </mxCell>
+    <mxCell id="s14_m9" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="9: rejectListing(listingId, reason)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="110" y="495" as="sourcePoint" />
+        <mxPoint x="370" y="495" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m10" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="10: setListingStatus(&#39;REJECTED&#39;, reason)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="505" as="sourcePoint" />
+        <mxPoint x="370" y="505" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m11" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="11: sendRejectionNotification(sellerId, reason)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="505" as="sourcePoint" />
+        <mxPoint x="620" y="505" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s14_m12" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="12: returnDecisionConfirmation()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="610" as="sourcePoint" />
+        <mxPoint x="110" y="610" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

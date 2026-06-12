@@ -1,0 +1,37 @@
+@startuml
+' SSD – UC-14: Admin Approve Listing
+title SSD – UC-14: Admin Approve Listing
+
+actor "Administrator" as Admin
+participant "SmartTech System" as System
+actor "Seller" as Seller
+
+== Load Moderation Queue ==
+
+Admin -> System: 1: loadModerationQueue()
+activate System
+
+System -> System: 2: getPendingListings(status='PENDING_REVIEW')
+System --> Admin: 3: returnPendingListingsWithDetails()
+
+== Review Listing ==
+
+Admin -> System: 4: reviewListing(listingId)
+System -> System: 5: retrieveFullListingDetails(listingId)
+
+alt Approve
+    Admin -> System: 6: approveListing(listingId)
+    System -> System: 7: setListingStatus('ACTIVE')
+    System --> Seller: 8: sendApprovalNotification(sellerId, listingId)
+    
+else Reject with reason
+    Admin -> System: 9: rejectListing(listingId, reason)
+    System -> System: 10: setListingStatus('REJECTED', reason)
+    System --> Seller: 11: sendRejectionNotification(sellerId, reason)
+end
+
+System --> Admin: 12: returnDecisionConfirmation()
+
+deactivate System
+
+@enduml

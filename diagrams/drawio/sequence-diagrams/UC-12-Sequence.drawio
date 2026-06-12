@@ -1,0 +1,93 @@
+<mxGraphModel dx="1688" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="s12_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=15;fontStyle=1;" value="SSD – UC-12: Write Review" vertex="1">
+      <mxGeometry height="30" width="680" x="20" y="10" as="geometry" />
+    </mxCell>
+    <mxCell id="s12_buyer_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="Buyer" vertex="1">
+      <mxGeometry height="40" width="120" x="40" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s12_sys_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=13;fontStyle=1;" value="SmartTech System" vertex="1">
+      <mxGeometry height="40" width="160" x="290" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="s12_buyer_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="100" y="100" as="sourcePoint" />
+        <mxPoint x="100" y="750" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_sys_l" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#000000;strokeWidth=1;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="100" as="sourcePoint" />
+        <mxPoint x="370" y="750" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m1" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="1: viewDeliveredOrders()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="100" y="160" as="sourcePoint" />
+        <mxPoint x="370" y="160" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m2" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="2: returnDeliveredOrdersList()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="200" as="sourcePoint" />
+        <mxPoint x="100" y="200" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m3" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="3: selectProductToReview(orderId, productId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="100" y="250" as="sourcePoint" />
+        <mxPoint x="370" y="250" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_alt1" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [already reviewed]" vertex="1">
+      <mxGeometry height="55" width="500" x="115" y="270" as="geometry" />
+    </mxCell>
+    <mxCell id="s12_m4" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="4: returnMessage(&#39;Review already submitted for this product&#39;)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="300" as="sourcePoint" />
+        <mxPoint x="100" y="300" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m5" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;align=center;" value="5: submitReview(rating, title, body, photos)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="100" y="370" as="sourcePoint" />
+        <mxPoint x="370" y="370" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m6" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="6: validateReviewContent(body length 20-500)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="410" as="sourcePoint" />
+        <mxPoint x="370" y="410" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_alt2" parent="1" style="swimlane;startSize=25;fillColor=none;strokeColor=#000000;fontSize=11;fontStyle=3;align=left;" value="alt [inappropriate content / profanity]" vertex="1">
+      <mxGeometry height="55" width="500" x="115" y="425" as="geometry" />
+    </mxCell>
+    <mxCell id="s12_m7" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="7: returnContentError(&#39;Review contains prohibited content&#39;)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="455" as="sourcePoint" />
+        <mxPoint x="100" y="455" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m8" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="8: saveReview(status=&#39;PendingModeration&#39;)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="520" as="sourcePoint" />
+        <mxPoint x="370" y="520" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m9" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="9: recalculateProductAverageRating(listingId)">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="560" as="sourcePoint" />
+        <mxPoint x="370" y="560" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="s12_m10" edge="1" parent="1" style="endArrow=block;endFill=1;strokeColor=#000000;fontSize=11;fontStyle=1;dashed=1;align=center;" value="10: returnReviewConfirmation()">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="370" y="600" as="sourcePoint" />
+        <mxPoint x="100" y="600" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

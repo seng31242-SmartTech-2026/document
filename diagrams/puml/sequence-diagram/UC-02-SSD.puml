@@ -1,0 +1,32 @@
+@startuml
+' SSD – UC-02: Login / Logout
+title SSD – UC-02: Login / Logout
+
+actor "User" as User
+participant "SmartTech System" as System
+
+== Login ==
+
+User -> System: 1: enterCredentials(email, password)
+activate System
+
+System -> System: 2: validateCredentials(email, password)
+
+alt invalid credentials
+    System --> User: 3: return error('Invalid email or password')
+else valid credentials
+    System -> System: 4: generateAccessToken(userId, role)
+    System -> System: 5: generateRefreshToken() → store in HttpOnly cookie
+    System --> User: 6: return accessToken + redirectToDashboard()
+end
+
+== Logout ==
+
+User -> System: 7: logout()
+System -> System: 8: invalidateRefreshToken()
+System -> System: 9: clearHttpOnlyCookie()
+System --> User: 10: return redirectToHomepage()
+
+deactivate System
+
+@enduml

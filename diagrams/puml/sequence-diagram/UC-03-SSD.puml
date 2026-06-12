@@ -1,0 +1,43 @@
+@startuml
+' SSD – UC-03: Reset Password
+title SSD – UC-03: Reset Password
+
+actor "User" as User
+participant "SmartTech System" as System
+participant "Email Service" as EmailService
+
+== Request Password Reset ==
+
+User -> System: 1: requestPasswordReset(email)
+activate System
+
+System -> System: 2: findUserByEmail(email)
+
+alt email not found
+    System --> User: 3: return generic message 'If email exists, reset link sent'
+else email found
+    System -> System: 4: generateResetToken(userId)
+    System -> EmailService: 5: sendResetEmail(email, resetToken)
+    activate EmailService
+    EmailService --> System: 6: deliveryStatus(sent)
+    deactivate EmailService
+    System --> User: 7: return confirmation('Reset email sent')
+end
+
+== Reset Password ==
+
+User -> System: 8: clickResetLink(token)
+System -> System: 9: validateToken(token)
+
+alt token expired/invalid
+    System --> User: 10: return error('Token expired or invalid')
+else token valid
+    User -> System: 11: submitNewPassword(newPassword)
+    System -> System: 12: hashAndUpdatePassword(userId, newPassword)
+    System -> System: 13: invalidateAllUserTokens()
+    System --> User: 14: return redirectToLogin()
+end
+
+deactivate System
+
+@enduml

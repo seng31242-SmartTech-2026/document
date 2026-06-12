@@ -1,0 +1,31 @@
+@startuml
+' SSD – UC-10: Track Order
+title SSD – UC-10: Track Order
+
+actor "Buyer" as Buyer
+participant "SmartTech System" as System
+
+== View Orders ==
+
+Buyer -> System: 1: viewMyOrders()
+activate System
+
+System -> System: 2: retrieveOrdersByBuyer(buyerId, sortBy='createdAt_desc')
+System --> Buyer: 3: returnOrderList(orders[])
+
+== View Order Details ==
+
+Buyer -> System: 4: selectOrder(orderId)
+System -> System: 5: retrieveOrderDetails(orderId)
+System -> System: 6: retrieveFulfilmentStatus(lineItems)
+System --> Buyer: 7: returnOrderDetailPage(order, items, statusTimeline)
+
+== Confirm Delivery ==
+
+Buyer -> System: 8: confirmDelivery(orderId)
+System -> System: 9: updateOrderStatus('DELIVERED')
+System --> Buyer: 10: return statusUpdatedConfirmation()
+
+deactivate System
+
+@enduml
